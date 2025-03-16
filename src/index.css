@@ -1,7 +1,217 @@
 .attribution {
+  position: absolute;
+  bottom: 5%;
   font-size: 11px;
   text-align: center;
+  color: var(--neutral-0);
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@font-face {
+  font-family: font-b;
+  src: url(./assets/fonts/static/Inconsolata-Bold.ttf);
+  font-display: swap;
+}
+@font-face {
+  font-family: font-extrab;
+  src: url(./assets/fonts/static/Inconsolata-ExtraBold.ttf);
+  font-display: swap;
+}
+@font-face {
+  font-family: font-m;
+  src: url(./assets/fonts/static/Inconsolata-Medium.ttf);
+  font-display: swap;
+}
+@font-face {
+  font-family: font-r;
+  src: url(./assets/fonts/static/Inconsolata-Regular.ttf);
+  font-display: swap;
+}
+
+:root {
+  --neutral-0: hsl(0, 0%, 100%);
+  --neutral-transparent: rgba(255, 255, 255, 0.1);
+  --neutral-300: hsl(252, 6%, 83%);
+  --neutral-500: hsl(245, 15%, 58%);
+  --neutral-700: hsl(245, 19%, 35%);
+  --neutral-900: hsl(248, 70%, 10%);
+  --orange-500: hsl(7, 88%, 67%);
+  --orange-700: hsl(7, 71%, 60%);
+  /* --Gradient-text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%); */
+
+  --border-radius: 10px;
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  font-family: font-r;
+  font-size: 1.5rem;
+  background-image: url("./assets/images/background-desktop.png");
+  background-size: cover;
+}
+
+h1 {
+  font-family: font-extrab;
+  color: var(--neutral-0);
+}
+
+p {
+  font-family: font-r;
+  color: var(--neutral-300);
+}
+
+label {
+  color: var(--neutral-0);
+  font-family: font-m;
+  margin-top: 3rem;
+}
+
+input {
+  margin-top: 1rem;
+  outline: none;
+  color: var(--neutral-300);
+  border-radius: var(--border-radius);
+  transition: outline 0.1s ease;
+  transition: background-color 0.1s ease;
+  background-color: var(--neutral-transparent);
+}
+input:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+input:invalid {
+  outline: 2px solid var(--orange-700);
+}
+
+input:not(input[type="file"]) {
+  padding: 1rem 2rem;
+  border: 1px solid var(--neutral-300);
+}
+input:not(input[type="file"]):focus {
+  /* create a outline equal to the border */
+  outline: 2px solid var(--neutral-300);
+  /* trick to make a new border. Use outline */
+  outline-offset: 3px;
+  color: var(--neutral-300);
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--border-radius);
+}
+
+/* Can't style the input so it's disabled */
+#upload {
+  display: none;
+}
+/* Style the label as it's possible to style it and it behaves as a input */
+/* Great tool for border */
+/* https://kovart.github.io/dashed-border-generator/ */
+#labelUpload {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%23D2D1D6FF' stroke-width='4' stroke-dasharray='8' stroke-dashoffset='6' stroke-linecap='butt'/%3e%3c/svg%3e");
+  border-radius: var(--border-radius);
+  padding: 5rem 20rem;
+  color: white;
+  text-align: center;
+  background-color: var(--neutral-transparent);
+  cursor: pointer;
+}
+#labelUpload:active {
+  /* create a outline equal to the border */
+  outline: 2px solid var(--neutral-300);
+  /* trick to make a new border. Use outline */
+  outline-offset: 3px;
+  color: var(--neutral-300);
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--border-radius);
+}
+#labelUpload:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: background-color 0.1s ease;
+}
+
+.submitBtn {
+  margin-top: 3rem;
+  padding: 1rem 2rem;
+  font-family: font-extrab;
+  color: var(--neutral-900);
+  background-color: var(--orange-500);
+  border-radius: var(--border-radius);
+}
+.submitBtn:focus {
+  /* create a outline equal to the border */
+  outline: 2px solid var(--neutral-300);
+  /* trick to make a new border. Use outline */
+  outline-offset: 3px;
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--border-radius);
+}
+
+.upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.uploadedBtn {
+  color: var(--neutral-0);
+  background: var(--neutral-transparent);
+  border-radius: 3px;
+  padding: 0 1rem;
+}
+.uploadedBtn:hover {
+  text-decoration: underline;
+}
+.uploadedImg {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+}
+.uploaded {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 5%;
+}
+
+.ticket-container {
+  position: relative;
+  background-image: url("./src/assets/images/pattern-ticket.svg");
+  width: 600px;
+  height: 280px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 10rem;
+}
+
+.ticketCode {
+  position: absolute;
+  top: 45%;
+  left: 85%;
+  transform: rotate(90deg);
+  font-size: 3rem;
+  font-family: font-m;
+  color: var(--neutral-500);
 }
