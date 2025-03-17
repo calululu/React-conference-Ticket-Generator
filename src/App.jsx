@@ -79,15 +79,17 @@ export default function App() {
 
       {!ticket ? (
         <>
-          <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
-          <p>
+          <h1 style={{ textAlign: "center" }}>
+            Your Journey to Coding Conf 2025 Starts Here!
+          </h1>
+          <p style={{ textAlign: "center" }}>
             Secure your spot at next year's biggest coding conference.Secure
             your spot at next year's biggest coding conference.
           </p>
 
           {/* form */}
           <form className="form" onSubmit={handleSubmitValid}>
-            <label id="labelUpload" htmlFor="upload">
+            <label id="labelUpload" htmlFor="upload" tabIndex="0">
               {!fileSizeError ? (
                 <div className="upload">
                   <svg
@@ -180,6 +182,7 @@ export default function App() {
               id="name"
               onInvalid={handlePreventError}
               onChange={(e) => setFullName(e.target.value)}
+              aria-label="Inserisci il nome completo"
               required
             />
 
