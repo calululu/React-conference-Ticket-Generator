@@ -50,23 +50,23 @@ body {
   font-family: font-r;
   font-size: 1.5rem;
   /* Molto importante, per unire più layer */
-  background: url("./pattern-squiggly-line-top.svg") top 10% right / auto
+  background: url("../pattern-squiggly-line-top.svg") top 10% right / auto
       no-repeat,
-    url("./pattern-squiggly-line-bottom-desktop.svg") bottom left / auto
+    url("../pattern-squiggly-line-bottom-desktop.svg") bottom left / auto
       no-repeat,
-    url("./pattern-circle.svg") center left 70% / auto no-repeat,
-    url("./pattern-lines.svg") center / cover no-repeat,
-    url("./background-desktop.png") center / cover no-repeat;
+    url("../pattern-circle.svg") center left 70% / auto no-repeat,
+    url("../pattern-lines.svg") center / cover no-repeat,
+    url("../background-desktop.png") center / cover no-repeat;
 }
 @media screen and (max-width: 560px) {
   body {
-    background: url("./pattern-squiggly-line-top.svg") top right / 35% 10%
+    background: url("../pattern-squiggly-line-top.svg") top right / 35% 10%
         no-repeat,
-      url("./pattern-squiggly-line-bottom-mobile-tablet.svg") bottom -17% left /
+      url("../pattern-squiggly-line-bottom-mobile-tablet.svg") bottom -17% left /
         300px 300px no-repeat,
-      url("./pattern-circle.svg") center left 120% / 35% 10% no-repeat,
-      url("./pattern-lines.svg") center / cover no-repeat,
-      url("./background-mobile.png") center / cover no-repeat;
+      url("../pattern-circle.svg") center left 120% / 35% 10% no-repeat,
+      url("../pattern-lines.svg") center / cover no-repeat,
+      url("../background-mobile.png") center / cover no-repeat;
   }
 }
 
@@ -234,7 +234,7 @@ form {
 
 .ticket-container {
   position: relative;
-  background-image: url("./pattern-ticket.svg");
+  background-image: url("../pattern-ticket.svg");
   aspect-ratio: 600 /280;
   width: 30%;
   /* width: 600px;
